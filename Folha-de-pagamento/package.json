@@ -8,7 +8,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon src/calculo_imposto_renda.js"
+    "dev": "nodemon src/calculo_salario_liquido.js"
   },
   "keywords": [],
   "author": "",
