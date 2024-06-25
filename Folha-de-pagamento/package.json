@@ -8,7 +8,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon src/programa_principal.js"
+    "dev": "nodemon src/programa_principal_pdf.js"
   },
   "keywords": [],
   "author": "",
