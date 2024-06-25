@@ -8,7 +8,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon src/inss.js"
+    "dev": "nodemon src/calculo_imposto_renda.js"
   },
   "keywords": [],
   "author": "",
