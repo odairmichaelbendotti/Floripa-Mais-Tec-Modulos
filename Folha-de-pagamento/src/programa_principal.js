@@ -1,3 +1,10 @@
+const readline = require('readline');
+
+const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
+
 function calcularINSS(salario) {
     let inss = 0;
     
@@ -46,10 +53,17 @@ function calcularSalarioLiquido(salarioBruto, outrosDescontos) {
     return salarioLiquido.toFixed(2);
 }
 
-let salarioBruto = 5000;
-let outrosDescontos = 300;
-console.log(`Salário Bruto: R$ ${salarioBruto}`);
-console.log(`INSS: R$ ${calcularINSS(salarioBruto).toFixed(2)}`);
-console.log(`Imposto de Renda: R$ ${calcularImpostoDeRenda(salarioBruto - calcularINSS(salarioBruto)).toFixed(2)}`);
-console.log(`Outros Descontos: R$ ${outrosDescontos.toFixed(2)}`);
-console.log(`Salário Líquido: R$ ${calcularSalarioLiquido(salarioBruto, outrosDescontos)}`);
+rl.question('Digite o salário bruto: ', (salarioBruto) => {
+    rl.question('Digite o valor de outros descontos: ', (outrosDescontos) => {
+        salarioBruto = parseFloat(salarioBruto);
+        outrosDescontos = parseFloat(outrosDescontos);
+
+        console.log(`Salário Bruto: R$ ${salarioBruto}`);
+        console.log(`INSS: R$ ${calcularINSS(salarioBruto).toFixed(2)}`);
+        console.log(`Imposto de Renda: R$ ${calcularImpostoDeRenda(salarioBruto - calcularINSS(salarioBruto)).toFixed(2)}`);
+        console.log(`Outros Descontos: R$ ${outrosDescontos.toFixed(2)}`);
+        console.log(`Salário Líquido: R$ ${calcularSalarioLiquido(salarioBruto, outrosDescontos)}`);
+
+        rl.close();
+    });
+});
