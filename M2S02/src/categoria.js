@@ -1,10 +1,8 @@
 function agruparPorCategoria(produtos) {
     return produtos.reduce((acc, produto) => {
-      // Se a categoria já existe no acumulador, soma o preço ao valor existente
       if (acc[produto.categoria]) {
         acc[produto.categoria] += produto.preco;
       } else {
-        // Se é a primeira vez que a categoria aparece, inicializa com o preço do produto atual
         acc[produto.categoria] = produto.preco;
       }
       return acc;
